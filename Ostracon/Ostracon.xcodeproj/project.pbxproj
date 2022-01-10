@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		626DDA26278C35C700FA7F57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626DDA25278C35C700FA7F57 /* AppDelegate.swift */; };
+		626DDA28278C35C700FA7F57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626DDA27278C35C700FA7F57 /* SceneDelegate.swift */; };
+		626DDA2A278C35C700FA7F57 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626DDA29278C35C700FA7F57 /* SignInVC.swift */; };
+		626DDA30278C35C800FA7F57 /* Ostracon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 626DDA2E278C35C800FA7F57 /* Ostracon.xcdatamodeld */; };
+		626DDA32278C35C900FA7F57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 626DDA31278C35C900FA7F57 /* Assets.xcassets */; };
+		626DDA35278C35C900FA7F57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 626DDA33278C35C900FA7F57 /* LaunchScreen.storyboard */; };
+		626DDA3D278C363600FA7F57 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626DDA3C278C363600FA7F57 /* SignUpVC.swift */; };
+		626DDA3F278C367100FA7F57 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626DDA3E278C367100FA7F57 /* TabBarVC.swift */; };
+		626DDA41278C368E00FA7F57 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626DDA40278C368E00FA7F57 /* HomeVC.swift */; };
+		626DDA43278C36AF00FA7F57 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626DDA42278C36AF00FA7F57 /* HomeCell.swift */; };
+		626DDA45278C36C800FA7F57 /* ExploringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626DDA44278C36C800FA7F57 /* ExploringVC.swift */; };
+		626DDA47278C36DC00FA7F57 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626DDA46278C36DC00FA7F57 /* FavoritesVC.swift */; };
+		626DDA49278C36F700FA7F57 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626DDA48278C36F700FA7F57 /* ProfileVC.swift */; };
+		626DDA4C278C375A00FA7F57 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 626DDA4B278C375A00FA7F57 /* FirebaseAuth */; };
+		626DDA4E278C375A00FA7F57 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 626DDA4D278C375A00FA7F57 /* FirebaseFirestore */; };
+		626DDA50278C375A00FA7F57 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 626DDA4F278C375A00FA7F57 /* FirebaseStorage */; };
+		6283CBD6278C3B4B001B36D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6283CBD5278C3B4B001B36D6 /* GoogleService-Info.plist */; };
+		6283CBDA278C3BA2001B36D6 /* rock.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6283CBD7278C3BA1001B36D6 /* rock.usdz */; };
+		6283CBDB278C3BA2001B36D6 /* masala.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6283CBD8278C3BA1001B36D6 /* masala.usdz */; };
+		6283CBDC278C3BA2001B36D6 /* naizk.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6283CBD9278C3BA2001B36D6 /* naizk.usdz */; };
+		6283CBDF278C4022001B36D6 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 6283CBDE278C4022001B36D6 /* FocusEntity */; };
+		6283CBE2278C515F001B36D6 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6283CBE1278C515F001B36D6 /* HideKeyboard.swift */; };
+		6283CBE4278C518C001B36D6 /* TextFieldDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6283CBE3278C518C001B36D6 /* TextFieldDesign.swift */; };
+		6283CBE7278C5304001B36D6 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 6283CBE6278C5304001B36D6 /* FirebaseFirestoreSwift-Beta */; };
+		6283CBE9278C530C001B36D6 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 6283CBE8278C530C001B36D6 /* FirebaseStorageSwift-Beta */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		626DDA22278C35C700FA7F57 /* Ostracon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ostracon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		626DDA25278C35C700FA7F57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		626DDA27278C35C700FA7F57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		626DDA29278C35C700FA7F57 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		626DDA2F278C35C800FA7F57 /* Ostracon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ostracon.xcdatamodel; sourceTree = "<group>"; };
+		626DDA31278C35C900FA7F57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		626DDA34278C35C900FA7F57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		626DDA36278C35C900FA7F57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		626DDA3C278C363600FA7F57 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		626DDA3E278C367100FA7F57 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		626DDA40278C368E00FA7F57 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		626DDA42278C36AF00FA7F57 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		626DDA44278C36C800FA7F57 /* ExploringVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploringVC.swift; sourceTree = "<group>"; };
+		626DDA46278C36DC00FA7F57 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		626DDA48278C36F700FA7F57 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		6283CBD5278C3B4B001B36D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6283CBD7278C3BA1001B36D6 /* rock.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = rock.usdz; sourceTree = "<group>"; };
+		6283CBD8278C3BA1001B36D6 /* masala.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = masala.usdz; sourceTree = "<group>"; };
+		6283CBD9278C3BA2001B36D6 /* naizk.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = naizk.usdz; sourceTree = "<group>"; };
+		6283CBE1278C515F001B36D6 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
+		6283CBE3278C518C001B36D6 /* TextFieldDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		626DDA1F278C35C700FA7F57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6283CBDF278C4022001B36D6 /* FocusEntity in Frameworks */,
+				626DDA4C278C375A00FA7F57 /* FirebaseAuth in Frameworks */,
+				6283CBE7278C5304001B36D6 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				626DDA4E278C375A00FA7F57 /* FirebaseFirestore in Frameworks */,
+				626DDA50278C375A00FA7F57 /* FirebaseStorage in Frameworks */,
+				6283CBE9278C530C001B36D6 /* FirebaseStorageSwift-Beta in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		626DDA19278C35C700FA7F57 = {
+			isa = PBXGroup;
+			children = (
+				626DDA24278C35C700FA7F57 /* Ostracon */,
+				626DDA23278C35C700FA7F57 /* Products */,
+				6283CBE5278C5304001B36D6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		626DDA23278C35C700FA7F57 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				626DDA22278C35C700FA7F57 /* Ostracon.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		626DDA24278C35C700FA7F57 /* Ostracon */ = {
+			isa = PBXGroup;
+			children = (
+				626DDA25278C35C700FA7F57 /* AppDelegate.swift */,
+				626DDA27278C35C700FA7F57 /* SceneDelegate.swift */,
+				626DDA29278C35C700FA7F57 /* SignInVC.swift */,
+				626DDA3C278C363600FA7F57 /* SignUpVC.swift */,
+				626DDA3E278C367100FA7F57 /* TabBarVC.swift */,
+				626DDA40278C368E00FA7F57 /* HomeVC.swift */,
+				626DDA42278C36AF00FA7F57 /* HomeCell.swift */,
+				626DDA44278C36C800FA7F57 /* ExploringVC.swift */,
+				626DDA46278C36DC00FA7F57 /* FavoritesVC.swift */,
+				626DDA48278C36F700FA7F57 /* ProfileVC.swift */,
+				626DDA31278C35C900FA7F57 /* Assets.xcassets */,
+				626DDA33278C35C900FA7F57 /* LaunchScreen.storyboard */,
+				626DDA36278C35C900FA7F57 /* Info.plist */,
+				6283CBD5278C3B4B001B36D6 /* GoogleService-Info.plist */,
+				6283CBE0278C5140001B36D6 /* Extensions */,
+				6283CBD4278C3B32001B36D6 /* 3D Assets */,
+				626DDA2E278C35C800FA7F57 /* Ostracon.xcdatamodeld */,
+			);
+			path = Ostracon;
+			sourceTree = "<group>";
+		};
+		6283CBD4278C3B32001B36D6 /* 3D Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6283CBD8278C3BA1001B36D6 /* masala.usdz */,
+				6283CBD9278C3BA2001B36D6 /* naizk.usdz */,
+				6283CBD7278C3BA1001B36D6 /* rock.usdz */,
+			);
+			path = "3D Assets";
+			sourceTree = "<group>";
+		};
+		6283CBE0278C5140001B36D6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6283CBE1278C515F001B36D6 /* HideKeyboard.swift */,
+				6283CBE3278C518C001B36D6 /* TextFieldDesign.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6283CBE5278C5304001B36D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		626DDA21278C35C700FA7F57 /* Ostracon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 626DDA39278C35C900FA7F57 /* Build configuration list for PBXNativeTarget "Ostracon" */;
+			buildPhases = (
+				626DDA1E278C35C700FA7F57 /* Sources */,
+				626DDA1F278C35C700FA7F57 /* Frameworks */,
+				626DDA20278C35C700FA7F57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ostracon;
+			packageProductDependencies = (
+				626DDA4B278C375A00FA7F57 /* FirebaseAuth */,
+				626DDA4D278C375A00FA7F57 /* FirebaseFirestore */,
+				626DDA4F278C375A00FA7F57 /* FirebaseStorage */,
+				6283CBDE278C4022001B36D6 /* FocusEntity */,
+				6283CBE6278C5304001B36D6 /* FirebaseFirestoreSwift-Beta */,
+				6283CBE8278C530C001B36D6 /* FirebaseStorageSwift-Beta */,
+			);
+			productName = Ostracon;
+			productReference = 626DDA22278C35C700FA7F57 /* Ostracon.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		626DDA1A278C35C700FA7F57 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					626DDA21278C35C700FA7F57 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 626DDA1D278C35C700FA7F57 /* Build configuration list for PBXProject "Ostracon" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 626DDA19278C35C700FA7F57;
+			packageReferences = (
+				626DDA4A278C375A00FA7F57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				6283CBDD278C4021001B36D6 /* XCRemoteSwiftPackageReference "FocusEntity" */,
+			);
+			productRefGroup = 626DDA23278C35C700FA7F57 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				626DDA21278C35C700FA7F57 /* Ostracon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		626DDA20278C35C700FA7F57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6283CBDB278C3BA2001B36D6 /* masala.usdz in Resources */,
+				626DDA35278C35C900FA7F57 /* LaunchScreen.storyboard in Resources */,
+				6283CBD6278C3B4B001B36D6 /* GoogleService-Info.plist in Resources */,
+				6283CBDA278C3BA2001B36D6 /* rock.usdz in Resources */,
+				6283CBDC278C3BA2001B36D6 /* naizk.usdz in Resources */,
+				626DDA32278C35C900FA7F57 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		626DDA1E278C35C700FA7F57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				626DDA47278C36DC00FA7F57 /* FavoritesVC.swift in Sources */,
+				6283CBE4278C518C001B36D6 /* TextFieldDesign.swift in Sources */,
+				626DDA2A278C35C700FA7F57 /* SignInVC.swift in Sources */,
+				626DDA41278C368E00FA7F57 /* HomeVC.swift in Sources */,
+				626DDA43278C36AF00FA7F57 /* HomeCell.swift in Sources */,
+				6283CBE2278C515F001B36D6 /* HideKeyboard.swift in Sources */,
+				626DDA26278C35C700FA7F57 /* AppDelegate.swift in Sources */,
+				626DDA45278C36C800FA7F57 /* ExploringVC.swift in Sources */,
+				626DDA30278C35C800FA7F57 /* Ostracon.xcdatamodeld in Sources */,
+				626DDA3D278C363600FA7F57 /* SignUpVC.swift in Sources */,
+				626DDA3F278C367100FA7F57 /* TabBarVC.swift in Sources */,
+				626DDA49278C36F700FA7F57 /* ProfileVC.swift in Sources */,
+				626DDA28278C35C700FA7F57 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		626DDA33278C35C900FA7F57 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				626DDA34278C35C900FA7F57 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		626DDA37278C35C900FA7F57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		626DDA38278C35C900FA7F57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		626DDA3A278C35C900FA7F57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V4C4W5RV23;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Ostracon/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sa.Ostracon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		626DDA3B278C35C900FA7F57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V4C4W5RV23;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Ostracon/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sa.Ostracon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		626DDA1D278C35C700FA7F57 /* Build configuration list for PBXProject "Ostracon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				626DDA37278C35C900FA7F57 /* Debug */,
+				626DDA38278C35C900FA7F57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		626DDA39278C35C900FA7F57 /* Build configuration list for PBXNativeTarget "Ostracon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				626DDA3A278C35C900FA7F57 /* Debug */,
+				626DDA3B278C35C900FA7F57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		626DDA4A278C375A00FA7F57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		6283CBDD278C4021001B36D6 /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		626DDA4B278C375A00FA7F57 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 626DDA4A278C375A00FA7F57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		626DDA4D278C375A00FA7F57 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 626DDA4A278C375A00FA7F57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		626DDA4F278C375A00FA7F57 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 626DDA4A278C375A00FA7F57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		6283CBDE278C4022001B36D6 /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6283CBDD278C4021001B36D6 /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
+		6283CBE6278C5304001B36D6 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 626DDA4A278C375A00FA7F57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		6283CBE8278C530C001B36D6 /* FirebaseStorageSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 626DDA4A278C375A00FA7F57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		626DDA2E278C35C800FA7F57 /* Ostracon.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				626DDA2F278C35C800FA7F57 /* Ostracon.xcdatamodel */,
+			);
+			currentVersion = 626DDA2F278C35C800FA7F57 /* Ostracon.xcdatamodel */;
+			path = Ostracon.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 626DDA1A278C35C700FA7F57 /* Project object */;
+}
