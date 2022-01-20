@@ -23,7 +23,6 @@
 		626DDA4C278C375A00FA7F57 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 626DDA4B278C375A00FA7F57 /* FirebaseAuth */; };
 		626DDA4E278C375A00FA7F57 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 626DDA4D278C375A00FA7F57 /* FirebaseFirestore */; };
 		626DDA50278C375A00FA7F57 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 626DDA4F278C375A00FA7F57 /* FirebaseStorage */; };
-		6283CBD6278C3B4B001B36D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6283CBD5278C3B4B001B36D6 /* GoogleService-Info.plist */; };
 		6283CBDA278C3BA2001B36D6 /* rock.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6283CBD7278C3BA1001B36D6 /* rock.usdz */; };
 		6283CBDB278C3BA2001B36D6 /* masala.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6283CBD8278C3BA1001B36D6 /* masala.usdz */; };
 		6283CBDC278C3BA2001B36D6 /* naizk.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6283CBD9278C3BA2001B36D6 /* naizk.usdz */; };
@@ -32,9 +31,14 @@
 		6283CBE4278C518C001B36D6 /* TextFieldDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6283CBE3278C518C001B36D6 /* TextFieldDesign.swift */; };
 		6283CBE7278C5304001B36D6 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 6283CBE6278C5304001B36D6 /* FirebaseFirestoreSwift-Beta */; };
 		6283CBE9278C530C001B36D6 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 6283CBE8278C530C001B36D6 /* FirebaseStorageSwift-Beta */; };
+		62977F58279556080061DEB0 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62977F57279556080061DEB0 /* PostVC.swift */; };
+		62977F5A2795A5EB0061DEB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62977F592795A5EB0061DEB0 /* GoogleService-Info.plist */; };
+		62977F5D2795AB190061DEB0 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 62977F5C2795AB190061DEB0 /* GoogleMaps */; };
+		62977F5F2795AB190061DEB0 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = 62977F5E2795AB190061DEB0 /* GooglePlaces */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62554CAE278C66770019C1F3 /* Ostracon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ostracon.entitlements; sourceTree = "<group>"; };
 		626DDA22278C35C700FA7F57 /* Ostracon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ostracon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		626DDA25278C35C700FA7F57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		626DDA27278C35C700FA7F57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,12 +54,13 @@
 		626DDA44278C36C800FA7F57 /* ExploringVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploringVC.swift; sourceTree = "<group>"; };
 		626DDA46278C36DC00FA7F57 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		626DDA48278C36F700FA7F57 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		6283CBD5278C3B4B001B36D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6283CBD7278C3BA1001B36D6 /* rock.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = rock.usdz; sourceTree = "<group>"; };
 		6283CBD8278C3BA1001B36D6 /* masala.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = masala.usdz; sourceTree = "<group>"; };
 		6283CBD9278C3BA2001B36D6 /* naizk.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = naizk.usdz; sourceTree = "<group>"; };
 		6283CBE1278C515F001B36D6 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		6283CBE3278C518C001B36D6 /* TextFieldDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
+		62977F57279556080061DEB0 /* PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
+		62977F592795A5EB0061DEB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +69,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6283CBDF278C4022001B36D6 /* FocusEntity in Frameworks */,
+				62977F5F2795AB190061DEB0 /* GooglePlaces in Frameworks */,
 				626DDA4C278C375A00FA7F57 /* FirebaseAuth in Frameworks */,
 				6283CBE7278C5304001B36D6 /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				626DDA4E278C375A00FA7F57 /* FirebaseFirestore in Frameworks */,
 				626DDA50278C375A00FA7F57 /* FirebaseStorage in Frameworks */,
+				62977F5D2795AB190061DEB0 /* GoogleMaps in Frameworks */,
 				6283CBE9278C530C001B36D6 /* FirebaseStorageSwift-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,11 +102,13 @@
 		626DDA24278C35C700FA7F57 /* Ostracon */ = {
 			isa = PBXGroup;
 			children = (
+				62554CAE278C66770019C1F3 /* Ostracon.entitlements */,
 				626DDA25278C35C700FA7F57 /* AppDelegate.swift */,
 				626DDA27278C35C700FA7F57 /* SceneDelegate.swift */,
 				626DDA29278C35C700FA7F57 /* SignInVC.swift */,
 				626DDA3C278C363600FA7F57 /* SignUpVC.swift */,
 				626DDA3E278C367100FA7F57 /* TabBarVC.swift */,
+				62977F57279556080061DEB0 /* PostVC.swift */,
 				626DDA40278C368E00FA7F57 /* HomeVC.swift */,
 				626DDA42278C36AF00FA7F57 /* HomeCell.swift */,
 				626DDA44278C36C800FA7F57 /* ExploringVC.swift */,
@@ -108,7 +117,7 @@
 				626DDA31278C35C900FA7F57 /* Assets.xcassets */,
 				626DDA33278C35C900FA7F57 /* LaunchScreen.storyboard */,
 				626DDA36278C35C900FA7F57 /* Info.plist */,
-				6283CBD5278C3B4B001B36D6 /* GoogleService-Info.plist */,
+				62977F592795A5EB0061DEB0 /* GoogleService-Info.plist */,
 				6283CBE0278C5140001B36D6 /* Extensions */,
 				6283CBD4278C3B32001B36D6 /* 3D Assets */,
 				626DDA2E278C35C800FA7F57 /* Ostracon.xcdatamodeld */,
@@ -165,6 +174,8 @@
 				6283CBDE278C4022001B36D6 /* FocusEntity */,
 				6283CBE6278C5304001B36D6 /* FirebaseFirestoreSwift-Beta */,
 				6283CBE8278C530C001B36D6 /* FirebaseStorageSwift-Beta */,
+				62977F5C2795AB190061DEB0 /* GoogleMaps */,
+				62977F5E2795AB190061DEB0 /* GooglePlaces */,
 			);
 			productName = Ostracon;
 			productReference = 626DDA22278C35C700FA7F57 /* Ostracon.app */;
@@ -197,6 +208,7 @@
 			packageReferences = (
 				626DDA4A278C375A00FA7F57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				6283CBDD278C4021001B36D6 /* XCRemoteSwiftPackageReference "FocusEntity" */,
+				62977F5B2795AB190061DEB0 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
 			);
 			productRefGroup = 626DDA23278C35C700FA7F57 /* Products */;
 			projectDirPath = "";
@@ -214,10 +226,10 @@
 			files = (
 				6283CBDB278C3BA2001B36D6 /* masala.usdz in Resources */,
 				626DDA35278C35C900FA7F57 /* LaunchScreen.storyboard in Resources */,
-				6283CBD6278C3B4B001B36D6 /* GoogleService-Info.plist in Resources */,
 				6283CBDA278C3BA2001B36D6 /* rock.usdz in Resources */,
 				6283CBDC278C3BA2001B36D6 /* naizk.usdz in Resources */,
 				626DDA32278C35C900FA7F57 /* Assets.xcassets in Resources */,
+				62977F5A2795A5EB0061DEB0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +244,7 @@
 				6283CBE4278C518C001B36D6 /* TextFieldDesign.swift in Sources */,
 				626DDA2A278C35C700FA7F57 /* SignInVC.swift in Sources */,
 				626DDA41278C368E00FA7F57 /* HomeVC.swift in Sources */,
+				62977F58279556080061DEB0 /* PostVC.swift in Sources */,
 				626DDA43278C36AF00FA7F57 /* HomeCell.swift in Sources */,
 				6283CBE2278C515F001B36D6 /* HideKeyboard.swift in Sources */,
 				626DDA26278C35C700FA7F57 /* AppDelegate.swift in Sources */,
@@ -379,6 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Ostracon/Ostracon.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V4C4W5RV23;
@@ -407,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Ostracon/Ostracon.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V4C4W5RV23;
@@ -470,6 +485,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		62977F5B2795AB190061DEB0 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/YAtechnologies/GoogleMaps-SP";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -502,6 +525,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 626DDA4A278C375A00FA7F57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageSwift-Beta";
+		};
+		62977F5C2795AB190061DEB0 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62977F5B2795AB190061DEB0 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMaps;
+		};
+		62977F5E2795AB190061DEB0 /* GooglePlaces */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62977F5B2795AB190061DEB0 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GooglePlaces;
 		};
 /* End XCSwiftPackageProductDependency section */
 

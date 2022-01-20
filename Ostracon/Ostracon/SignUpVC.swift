@@ -154,11 +154,12 @@ class SignUpVC: UIViewController{
                 }
                 
             }
-            db.collection("Users")
+            db.collection("Account")
                 .addDocument(data:
                                 [
                                     "email" : emailTextField.text!,
-                                    "name" : nameTextField.text!
+                                    "name" : nameTextField.text!,
+                                    "type" : "user"
                                 ])
             { error in
                 if error == nil {
@@ -180,11 +181,12 @@ class SignUpVC: UIViewController{
                     self.present(TabBarVC(), animated: true)
                 }
             }
-            db.collection("Museum")
+            db.collection("Account")
                 .addDocument(data:
                                 [
                                     "email" : emailTextField.text!,
-                                    "name" : nameTextField.text!
+                                    "name" : nameTextField.text!,
+                                    "type": "museum"
                                 ])
             { error in
                 if error == nil {

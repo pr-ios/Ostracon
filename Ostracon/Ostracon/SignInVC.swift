@@ -9,15 +9,19 @@ import UIKit
 import AuthenticationServices
 import CryptoKit
 import FirebaseAuth
+import Firebase
 
 class SignInVC: UIViewController {
     
+    var dispatchGroup = DispatchGroup()
+    let db = Firestore.firestore()
+    let myQueue = OperationQueue()
     var logoImage: UIImageView = {
         $0.image = UIImage(named: "OstraconLogo")
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UIImageView())
-        
+    
     var emailTextField: UITextField = {
         $0.placeholder = "email"
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -64,9 +68,9 @@ class SignInVC: UIViewController {
     var leftLine: UIView = {
         $0.backgroundColor = #colorLiteral(red: 0.5963299274, green: 0.5891020894, blue: 0.5924932361, alpha: 1)
         $0.translatesAutoresizingMaskIntoConstraints = false
-       return $0
+        return $0
     }(UIView())
-
+    
     var orLabel: UILabel = {
         $0.text = "OR"
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -78,7 +82,7 @@ class SignInVC: UIViewController {
     var righLine: UIView = {
         $0.backgroundColor = #colorLiteral(red: 0.5963299274, green: 0.5891020894, blue: 0.5924932361, alpha: 1)
         $0.translatesAutoresizingMaskIntoConstraints = false
-       return $0
+        return $0
     }(UIView())
     
     var signUpLabel: UILabel = {
@@ -113,7 +117,7 @@ class SignInVC: UIViewController {
         view.addSubview(righLine)
         view.addSubview(signUpLabel)
         view.addSubview(signUp)
-       
+        
         hideKeyboardWhenTappedAround()
         
         NSLayoutConstraint.activate([
@@ -121,12 +125,12 @@ class SignInVC: UIViewController {
             logoImage.heightAnchor.constraint(equalToConstant: 150),
             logoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                        
+            
             emailTextField.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 100),
             emailTextField.heightAnchor.constraint(equalToConstant: 45),
             emailTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             emailTextField.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -40),
-        
+            
             passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 15),
             passwordTextField.heightAnchor.constraint(equalToConstant: 45),
             passwordTextField.widthAnchor.constraint(equalTo: emailTextField.widthAnchor),
@@ -168,9 +172,9 @@ class SignInVC: UIViewController {
     }
     
     @objc func handleSignInWithAppleTapped() {
-       performSignIn()
+        performSignIn()
     }
-
+    
     @objc func register() {
         let vc = SignUpVC()
         vc.modalPresentationStyle = .fullScreen
@@ -178,26 +182,56 @@ class SignInVC: UIViewController {
     }
     
     @objc func signInWithEmail() {
+        
+        myQueue.waitUntilAllOperationsAreFinished()
+        
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { authDataResult, error in
             if let error = error {
                 print("error\(error.localizedDescription)")
                 self.emailTextField.invalid()
                 self.passwordTextField.invalid()
             } else {
-                self.present(TabBarVC(), animated: true)
+                let vc = TabBarVC()
+                self.dispatchGroup.enter()
+                
+                DispatchQueue.main.async {
+                    TabBarVC.userType = self.checkTypeOfUser()
+                    print("type is", TabBarVC.userType)
+                    self.dispatchGroup.leave()
+                }
+                
+                self.dispatchGroup.notify(queue: .main) {
+                    self.present(vc, animated: true)
+
+                }
+            
             }
         }
     }
     
+    
+    func checkTypeOfUser() -> String {
+        var returnStringValue = "nonono"
+        db.collection("Account").whereField("email", isEqualTo: Auth.auth().currentUser!.email).getDocuments { querySnapshot, error in
+            if let error = error {
+                
+            } else {
+                returnStringValue = querySnapshot?.documents[0].get("type") as! String
+                print(returnStringValue)
+            }
+        }
+        return returnStringValue
+        
+    }
     func performSignIn() {
         let request = createAppleIDRequest()
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
-
+        
     }
-
+    
     func createAppleIDRequest() -> ASAuthorizationAppleIDRequest{
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
@@ -208,58 +242,69 @@ class SignInVC: UIViewController {
         return request
     }
     
-   // Unhashed nonce.
+    // Unhashed nonce.
     fileprivate var currentNonce: String?
+    
     @available(iOS 13, *)
     func startSignInWithAppleFlow() {
-      let nonce = randomNonceString()
-      currentNonce = nonce
-      let appleIDProvider = ASAuthorizationAppleIDProvider()
-      let request = appleIDProvider.createRequest()
-      request.requestedScopes = [.fullName, .email]
-      request.nonce = sha256(nonce)
-        if request.user != nil {
-            self.present(TabBarVC(), animated: true)
-        }
-      let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-      authorizationController.delegate = self
-      authorizationController.presentationContextProvider = self
-      authorizationController.performRequests()
+        let nonce = randomNonceString()
+        currentNonce = nonce
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        request.nonce = sha256(nonce)
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
     }
-
     
 }
 
-    
-   
-
-
 
 extension SignInVC: ASAuthorizationControllerDelegate {
+    
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
             guard let nonce = currentNonce else {
-                fatalError("Invalid state: a login callback was received, but no login request was sent")
+                fatalError("Invalid state: A login callback was received, but no login request was sent.")
             }
             guard let appleIDToken = appleIDCredential.identityToken else {
                 print("Unable to fetch identity token")
                 return
             }
             guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
-                print("Unable tp serialize token string from data: \(appleIDToken.debugDescription)")
+                print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
                 return
             }
+            // Initialize a Firebase credential.
             let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
-
-            Auth.auth().signIn(with: credential) { authDataResult, error in
-                if let user = authDataResult?.user {
-                    print("Nice! You're now signed in as \(user.uid), email: \(user.email ?? "unknown")")
-
+            
+            // Sign in with Firebase.
+            Auth.auth().signIn(with: credential) { (authResult, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                } else {
+                    let user = authResult?.user
+                    print("Nice! You're now signed in as \(user!.uid), email: \(user?.email ?? "unknown")")
+                    self.present(TabBarVC(), animated: true)
                 }
+                
             }
         }
+        
     }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        // Handle error.
+        print("Sign in with Apple errored: \(error)")
+    }
+    
 }
+
+
 
 extension SignInVC: ASAuthorizationControllerPresentationContextProviding {
     
@@ -271,47 +316,49 @@ extension SignInVC: ASAuthorizationControllerPresentationContextProviding {
 
 // Adapted from https://auth0.com/docs/api-auth/tutorials/nonce#generate-a-cryptographically-random-nonce
 private func randomNonceString(length: Int = 32) -> String {
-  precondition(length > 0)
-  let charset: [Character] =
+    precondition(length > 0)
+    let charset: [Character] =
     Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
-  var result = ""
-  var remainingLength = length
-
-  while remainingLength > 0 {
-    let randoms: [UInt8] = (0 ..< 16).map { _ in
-      var random: UInt8 = 0
-      let errorCode = SecRandomCopyBytes(kSecRandomDefault, 1, &random)
-      if errorCode != errSecSuccess {
-        fatalError(
-          "Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)"
-        )
-      }
-      return random
+    var result = ""
+    var remainingLength = length
+    
+    while remainingLength > 0 {
+        let randoms: [UInt8] = (0 ..< 16).map { _ in
+            var random: UInt8 = 0
+            let errorCode = SecRandomCopyBytes(kSecRandomDefault, 1, &random)
+            if errorCode != errSecSuccess {
+                fatalError(
+                    "Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)"
+                )
+            }
+            return random
+        }
+        
+        randoms.forEach { random in
+            if remainingLength == 0 {
+                return
+            }
+            
+            if random < charset.count {
+                result.append(charset[Int(random)])
+                remainingLength -= 1
+            }
+        }
     }
-
-    randoms.forEach { random in
-      if remainingLength == 0 {
-        return
-      }
-
-      if random < charset.count {
-        result.append(charset[Int(random)])
-        remainingLength -= 1
-      }
-    }
-  }
-
-  return result
+    
+    return result
 }
 
-@available(iOS 13, *)
+
+@available(iOS 15, *)
 private func sha256(_ input: String) -> String {
-  let inputData = Data(input.utf8)
-  let hashedData = SHA256.hash(data: inputData)
-  let hashString = hashedData.compactMap {
-    String(format: "%02x", $0)
-  }.joined()
-
-  return hashString
+    let inputData = Data(input.utf8)
+    let hashedData = SHA256.hash(data: inputData)
+    let hashString = hashedData.compactMap {
+        String(format: "%02x", $0)
+    }.joined()
+    
+    return hashString
 }
+
 

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>456089713705-st32ck58ldd56jbo99830rj57ttk9r3s.apps.googleusercontent.com</string>
+	<string>456089713705-4r8mfbco5on8sbabs6jtjacsu7jf42pl.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.456089713705-st32ck58ldd56jbo99830rj57ttk9r3s</string>
+	<string>com.googleusercontent.apps.456089713705-4r8mfbco5on8sbabs6jtjacsu7jf42pl</string>
 	<key>API_KEY</key>
 	<string>AIzaSyD3X8aPZGMe5WoJ-DU_UgmplhcjV4SpLd8</string>
 	<key>GCM_SENDER_ID</key>
@@ -19,16 +19,16 @@
 	<key>STORAGE_BUCKET</key>
 	<string>ostracon-4cd68.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:456089713705:ios:cd90aba18491fbb8e1f038</string>
+	<string>1:456089713705:ios:531c9f8ff50ba826e1f038</string>
 </dict>
 </plist>
