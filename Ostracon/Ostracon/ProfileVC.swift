@@ -42,10 +42,9 @@ class ProfileVC: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.9594197869, green: 0.9599153399, blue: 0.975127399, alpha: 1)
         title = "Profile"
         checkCurrentUser()
-        
+        backBarButton()
         downloadImage()
         
-       
         imagePicker.delegate = self
         
         view.addSubview(profileImage)
@@ -62,7 +61,6 @@ class ProfileVC: UIViewController {
         ])
     }
     
-    
     func checkCurrentUser() {
         if let user = Auth.auth().currentUser {
             print("You're signed in as \(user.uid), email: \(user.email ?? "unknown")")
@@ -72,10 +70,6 @@ class ProfileVC: UIViewController {
             present(vc, animated: true)
         }
     }
-    
-   
-    
-    
     
     func downloadImage(){
         
@@ -100,6 +94,16 @@ class ProfileVC: UIViewController {
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func backBarButton() {
+        let largeConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .bold, scale: .large)
+        let largeBoldArrow = UIImage(systemName: "chevron.backward", withConfiguration: largeConfig)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: largeBoldArrow, style: .plain, target: self, action: #selector(back))
+        navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0, green: 0.2716650367, blue: 1, alpha: 1)
+    }
+    @objc func back() {
+       dismiss(animated: true)
     }
 }
 

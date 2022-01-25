@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class HomeVC: UIViewController {
     var artifactsTableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +36,7 @@ class HomeVC: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0, green: 0.2716650367, blue: 1, alpha: 1)
     }
     @objc func profil() {
-        let vc = ProfileVC()
+        let vc = UINavigationController(rootViewController: ProfileVC())
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
