@@ -17,13 +17,6 @@ class TabBarVC: UITabBarController {
         
         super.viewDidLoad()
 
-       
-        
-        print(",,,,,,,,",TabBarVC.userType)
-        
-        
-        
-        
         self.tabBar.backgroundColor = .white
         self.tabBar.tintColor = #colorLiteral(red: 0, green: 0.2716650367, blue: 1, alpha: 1)
         self.modalPresentationStyle = .fullScreen

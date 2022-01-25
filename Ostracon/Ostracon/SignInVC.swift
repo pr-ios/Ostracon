@@ -185,42 +185,49 @@ class SignInVC: UIViewController {
         
         myQueue.waitUntilAllOperationsAreFinished()
         
-        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { authDataResult, error in
-            if let error = error {
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!)
+        { authDataResult, error in
+            if let error = error
+            {
                 print("error\(error.localizedDescription)")
                 self.emailTextField.invalid()
+                self.emailTextField.placeholderColor = #colorLiteral(red: 0.8440353274, green: 0.07012300938, blue: 0.2101863027, alpha: 1)
                 self.passwordTextField.invalid()
-            } else {
+                self.passwordTextField.placeholderColor = #colorLiteral(red: 0.8440353274, green: 0.07012300938, blue: 0.2101863027, alpha: 1)
+            } else
+            {
                 let vc = TabBarVC()
                 self.dispatchGroup.enter()
                 
-                DispatchQueue.main.async {
-                    TabBarVC.userType = self.checkTypeOfUser()
-                    print("type is", TabBarVC.userType)
-                    self.dispatchGroup.leave()
-                }
-                
-                self.dispatchGroup.notify(queue: .main) {
-                    self.present(vc, animated: true)
+                self.checkTypeOfUser(completion:
+                    ({   (type)   in
+                        DispatchQueue.main.async {
+                            TabBarVC.userType = type
+                            self.dispatchGroup.leave()
+                        }
+                        
+                        self.dispatchGroup.notify(queue: .main) {
+                            self.present(vc, animated: true)
 
-                }
-            
+                        }
+                    })
+                )
             }
         }
     }
     
     
-    func checkTypeOfUser() -> String {
-        var returnStringValue = "nonono"
+    func checkTypeOfUser(completion: @escaping (String)-> ()) {
+        var returnStringValue = ""
         db.collection("Account").whereField("email", isEqualTo: Auth.auth().currentUser!.email).getDocuments { querySnapshot, error in
             if let error = error {
-                
+                print(error.localizedDescription)
             } else {
                 returnStringValue = querySnapshot?.documents[0].get("type") as! String
                 print(returnStringValue)
+                completion(returnStringValue)
             }
         }
-        return returnStringValue
         
     }
     func performSignIn() {

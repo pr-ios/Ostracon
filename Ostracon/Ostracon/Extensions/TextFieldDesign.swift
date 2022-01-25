@@ -28,3 +28,9 @@ extension UITextField {
     }
 }
 
+extension UITextField{
+    @IBInspectable var placeholderColor: UIColor? {
+        get {return self.placeholderColor}
+        set {self.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "", attributes: [NSAttributedString.Key.foregroundColor : newValue!])}
+    }
+}

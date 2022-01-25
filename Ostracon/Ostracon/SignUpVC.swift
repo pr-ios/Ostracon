@@ -147,7 +147,10 @@ class SignUpVC: UIViewController{
                 if let error = error {
                     print("error\(error.localizedDescription)")
                     self.emailTextField.invalid()
+                    self.emailTextField.placeholderColor = #colorLiteral(red: 0.8440353274, green: 0.07012300938, blue: 0.2101863027, alpha: 1)
                     self.passwordTextField.invalid()
+                    self.passwordTextField.placeholderColor = #colorLiteral(red: 0.8440353274, green: 0.07012300938, blue: 0.2101863027, alpha: 1)
+                    
                 } else {
                     print("The account has been created successfully")
                     self.present(TabBarVC(), animated: true)
