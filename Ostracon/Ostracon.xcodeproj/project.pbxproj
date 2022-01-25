@@ -35,6 +35,7 @@
 		62977F5A2795A5EB0061DEB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62977F592795A5EB0061DEB0 /* GoogleService-Info.plist */; };
 		62977F5D2795AB190061DEB0 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 62977F5C2795AB190061DEB0 /* GoogleMaps */; };
 		62977F5F2795AB190061DEB0 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = 62977F5E2795AB190061DEB0 /* GooglePlaces */; };
+		62D25A0827A0666400FABF6F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D25A0727A0666400FABF6F /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		6283CBE3278C518C001B36D6 /* TextFieldDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
 		62977F57279556080061DEB0 /* PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
 		62977F592795A5EB0061DEB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		62D25A0727A0666400FABF6F /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				626DDA29278C35C700FA7F57 /* SignInVC.swift */,
 				626DDA3C278C363600FA7F57 /* SignUpVC.swift */,
 				626DDA3E278C367100FA7F57 /* TabBarVC.swift */,
+				62D25A0727A0666400FABF6F /* SettingsVC.swift */,
 				62977F57279556080061DEB0 /* PostVC.swift */,
 				626DDA40278C368E00FA7F57 /* HomeVC.swift */,
 				626DDA42278C36AF00FA7F57 /* HomeCell.swift */,
@@ -254,6 +257,7 @@
 				626DDA3F278C367100FA7F57 /* TabBarVC.swift in Sources */,
 				626DDA49278C36F700FA7F57 /* ProfileVC.swift in Sources */,
 				626DDA28278C35C700FA7F57 /* SceneDelegate.swift in Sources */,
+				62D25A0827A0666400FABF6F /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

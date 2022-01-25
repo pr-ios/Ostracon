@@ -26,15 +26,19 @@ class TabBarVC: UITabBarController {
         let vc1 = UINavigationController(rootViewController: HomeVC())
         let vc2 = UINavigationController(rootViewController: ExploringVC())
         let vc3 = UINavigationController(rootViewController: FavoritesVC())
-        let vc4 = UINavigationController(rootViewController: ProfileVC())
+        let vc4 = UINavigationController(rootViewController: SettingsVC())
         let vc5 = UINavigationController(rootViewController: PostVC())
-        
+        vc1.title = "Home"
+        vc2.title = "Exploring"
+        vc3.title = "Favorites"
+        vc4.title = "Settings"
+        vc5.title = "Post"
         if TabBarVC.userType == "user" {
             self.setViewControllers([vc1,vc2,vc3,vc4], animated: true)
 
             guard let items = self.tabBar.items else {return}
             
-            let images = ["house","map","heart","person"]
+            let images = ["house","map","heart","gear.circle"]
             
             for i in 0..<items.count {
                 items[i].image = UIImage(systemName: images[i])
@@ -45,7 +49,7 @@ class TabBarVC: UITabBarController {
 
             guard let items = self.tabBar.items else {return}
             
-            let images = ["house","map","plus.circle","heart","person"]
+            let images = ["house","map","plus.circle","heart","gear.circle"]
             
             for i in 0..<items.count {
                 items[i].image = UIImage(systemName: images[i])

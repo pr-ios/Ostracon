@@ -46,9 +46,22 @@ class ExploringVC: UIViewController, CLLocationManagerDelegate {
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         mapView.setRegion(region, animated: true)
-        
+        // (26.3354262, 50.1209593)
         let pin = MKPointAnnotation()
-        pin.coordinate = coordinate
+        pin.coordinate = CLLocationCoordinate2D(latitude: 26.3354262, longitude: 50.1209593)
+        pin.title = "King Abdulaziz Center for World Culture - Ithra"
         mapView.addAnnotation(pin)
+        
+        // (24.6310391, 46.7134817)
+        let pin1 = MKPointAnnotation()
+        pin1.coordinate = CLLocationCoordinate2D(latitude: 24.6310391, longitude: 46.7134817)
+        pin1.title = "Al Masmak Palace Museum"
+        mapView.addAnnotation(pin1)
+        
+        // (24.6475544, 46.7103484)
+        let pin2 = MKPointAnnotation()
+        pin2.coordinate = CLLocationCoordinate2D(latitude: 24.6475544, longitude: 46.7103484)
+        pin2.title = "The Saudi National Museum"
+        mapView.addAnnotation(pin2)
     }
 }

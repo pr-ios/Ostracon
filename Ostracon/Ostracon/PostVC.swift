@@ -14,6 +14,7 @@ class PostVC: UIViewController {
     let imagePicker = UIImagePickerController()
     let currentEmail = Auth.auth().currentUser?.email
     let imageFolderReference = Storage.storage().reference().child("ThumbnailImage")
+    let controller = UIDocumentPickerViewController(forOpeningContentTypes: [.usdz], asCopy: true)
     
     var nameTextField: UITextField = {
         $0.placeholder = "name"
@@ -107,16 +108,42 @@ class PostVC: UIViewController {
             addUsdzFileButton.heightAnchor.constraint(equalToConstant: 45),
             addUsdzFileButton.widthAnchor.constraint(equalToConstant: 160)
         ])
+        controller.delegate = self
+        if #available(iOS 11.0, *) {
+            controller.allowsMultipleSelection = false
         }
+    }
     
     @objc func addThumbnail() {
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.allowsEditing = true
-        present(imagePicker, animated: true, completion: nil)
+        if nameTextField.text?.isEmpty == true {
+            nameTextField.invalid()
+            nameTextField.placeholderColor = #colorLiteral(red: 0.8440353274, green: 0.07012300938, blue: 0.2101863027, alpha: 1)
+        } else if typeTextField.text?.isEmpty == true {
+            typeTextField.invalid()
+            typeTextField.placeholderColor = #colorLiteral(red: 0.8440353274, green: 0.07012300938, blue: 0.2101863027, alpha: 1)
+        } else if descriptionTextField.text?.isEmpty == true {
+            descriptionTextField.invalid()
+            descriptionTextField.placeholderColor = #colorLiteral(red: 0.8440353274, green: 0.07012300938, blue: 0.2101863027, alpha: 1)
+        } else {
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = true
+            present(imagePicker, animated: true, completion: nil)
+        }
     }
     
     @objc func addUsdzFile() {
-        
+        if nameTextField.text?.isEmpty == true {
+            nameTextField.invalid()
+            nameTextField.placeholderColor = #colorLiteral(red: 0.8440353274, green: 0.07012300938, blue: 0.2101863027, alpha: 1)
+        } else if typeTextField.text?.isEmpty == true {
+            typeTextField.invalid()
+            typeTextField.placeholderColor = #colorLiteral(red: 0.8440353274, green: 0.07012300938, blue: 0.2101863027, alpha: 1)
+        } else if descriptionTextField.text?.isEmpty == true {
+            descriptionTextField.invalid()
+            descriptionTextField.placeholderColor = #colorLiteral(red: 0.8440353274, green: 0.07012300938, blue: 0.2101863027, alpha: 1)
+        } else {
+            present(controller,animated: true)
+        }
     }
 }
 
@@ -137,8 +164,22 @@ extension PostVC: UIImagePickerControllerDelegate & UINavigationControllerDelega
                 }
             }
             
-         }
-
-         dismiss(animated: true, completion: nil)
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
 }
+
+
+extension PostVC: UIDocumentPickerDelegate {
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        
+        //TODO: هذا لأكثر من ملف
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+        
+        //TODO: هذا لملف واحد
+    }
+}
+

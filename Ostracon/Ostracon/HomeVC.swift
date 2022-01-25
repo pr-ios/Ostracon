@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealityKit
 
 class HomeVC: UIViewController {
     var artifactsTableView: UITableView = {
@@ -17,10 +16,12 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9594197869, green: 0.9599153399, blue: 0.975127399, alpha: 1)
         title = "Home"
+        profileBarButton()
         artifactsTableView.delegate = self
         artifactsTableView.dataSource = self
         artifactsTableView.register(HomeCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(artifactsTableView)
+        
         NSLayoutConstraint.activate([
             artifactsTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             artifactsTableView.heightAnchor.constraint(equalTo: view.heightAnchor, constant: -200),
@@ -29,6 +30,17 @@ class HomeVC: UIViewController {
         ])
     }
     
+    func profileBarButton() {
+        let largeConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .bold, scale: .large)
+        let largeBoldArrow = UIImage(systemName: "person.crop.circle", withConfiguration: largeConfig)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: largeBoldArrow, style: .plain, target: self, action: #selector(profil))
+        navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0, green: 0.2716650367, blue: 1, alpha: 1)
+    }
+    @objc func profil() {
+        let vc = ProfileVC()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
 }
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
