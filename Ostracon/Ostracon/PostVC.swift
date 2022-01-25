@@ -76,6 +76,7 @@ class PostVC: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.9594197869, green: 0.9599153399, blue: 0.975127399, alpha: 1)
         title = "Post"
         imagePicker.delegate = self
+        hideKeyboardWhenTappedAround()
         
         view.addSubview(nameTextField)
         view.addSubview(typeTextField)
